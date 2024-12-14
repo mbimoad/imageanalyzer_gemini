@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+</head>
+
+<body>
+  <main>
+    <h1>Image AI</h1>
+    <form>
+      <div class="image-picker">
+        <label class="image-choice">
+          <input type="radio" checked name="chosen-image" value="/tambah.png">
+          <img src="/tambah.png">
+        </label>
+        <label class="image-choice">
+          <input type="radio" name="chosen-image" value="/variabel.png">
+          <img src="/variabel.png">
+        </label>
+        <label class="image-choice">
+          <input type="radio" name="chosen-image" value="/Goku_black_colored.PNG.webp">
+          <img src="/Goku_black_colored.PNG.webp">
+        </label>
+       
+      </div>
+      <div class="prompt-box">
+        <label>
+          <input style="" name="prompt" placeholder="Enter instructions here" type="text"
+            value="As a professional math model, solve the following equation, Only answer questions related to mathematics. Do not answer any other type of question. Now Lets Solved the following Problem">
+        </label>
+        <button type="submit">Go</button>
+      </div>
+    </form>
+    <p class="output"></p>
+  </main>
+
+  <script type="module" src="/image.js"></script>
+</body>
+
+</html>
