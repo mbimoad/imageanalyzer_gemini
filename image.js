@@ -19,7 +19,6 @@ form.onsubmit = async (ev) => {
       .then(r => r.arrayBuffer())
       .then(a => Base64.fromByteArray(new Uint8Array(a)));
 
-
     let contents = [
       {
         role: 'user',
