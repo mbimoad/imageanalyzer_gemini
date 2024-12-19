@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 import Base64 from 'base64-js';
 import MarkdownIt from 'markdown-it';
-import { maybeShowApiKeyBanner } from './gemini-api-banner';
+// import { maybeShowApiKeyBanner } from './gemini-api-banner';
 import './style.css';
 
 let API_KEY = 'AIzaSyDvUG2JmYIHC_EOIV_qxjccoejP-fMaqPk';
@@ -51,4 +51,4 @@ form.onsubmit = async (ev) => {
 };
 
 // You can delete this once you've filled out an API key
-maybeShowApiKeyBanner(API_KEY);
+// maybeShowApiKeyBanner(API_KEY);

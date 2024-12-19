@@ -1,43 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
 </head>
-
 <body>
-  <main>
-    <h1>Image AI</h1>
-    <form>
-      <div class="image-picker">
-        <label class="image-choice">
-          <input type="radio" checked name="chosen-image" value="/tambah.png">
-          <img src="/tambah.png">
-        </label>
-        <label class="image-choice">
-          <input type="radio" name="chosen-image" value="/variabel.png">
-          <img src="/variabel.png">
-        </label>
-        <label class="image-choice">
-          <input type="radio" name="chosen-image" value="/Goku_black_colored.PNG.webp">
-          <img src="/Goku_black_colored.PNG.webp">
-        </label>
-       
-      </div>
-      <div class="prompt-box">
-        <label>
-          <input style="" name="prompt" placeholder="Enter instructions here" type="text"
-            value="As a professional math model, solve the following equation, Only answer questions related to mathematics. Do not answer any other type of question. Now Lets Solved the following Problem">
-        </label>
-        <button type="submit">Go</button>
-      </div>
+    <marquee><h2>AIMATH SOLVER</h2></marquee>
+    <img src="" id="imagePreview" width="100">
+
+    <h1>Upload a File</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Choose a file:</label>
+        <input type="file" id="file" name="file" required />
+        <button type="submit">Upload</button>
     </form>
     <p class="output"></p>
-  </main>
+    <script type="module" src="/image.js"></script>
+    <script>
+        document.getElementById('file').addEventListener('change', function(event) {
+        const file = event.target.files[0]; // Get the first selected file
 
-  <script type="module" src="/image.js"></script>
+        if (file) {
+            // Validate if it's an image
+            if (!file.type.startsWith('image/')) {
+                alert('Please upload a valid image.');
+                return;
+            }
+
+            // Create a temporary URL for the image
+            const tempUrl = URL.createObjectURL(file);
+
+            // Set the src of the image element to the temporary URL
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = tempUrl;
+            imagePreview.style.display = 'block';
+
+            // Clean up the URL when no longer needed
+            imagePreview.onload = () => URL.revokeObjectURL(tempUrl);
+        }
+    });
+    </script>
 </body>
-
 </html>
+
+
