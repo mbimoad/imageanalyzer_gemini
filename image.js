@@ -21,7 +21,7 @@ document.querySelector('#file').addEventListener('change', function(event) {
           base64String = base64String.split('base64,'); 
 
           base64String = base64String[1]; // Display the Base64 string
-          output.textContent = base64String // Display the Base64 string
+          // output.textContent = base64String // Display the Base64 string
           console.log(base64String); // Log the Base64 string to the console
       };
 
